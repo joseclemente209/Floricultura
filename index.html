@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloriApp - Gestão de Plantas</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1b4d3e">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header>
+    <h1>🌿 FloriApp</h1>
+  </header>
+
+  <main class="container">
+    <!-- ABA INÍCIO -->
+    <section id="inicio" class="tab-content active">
+      <h2>Plantas a Regar Hoje</h2>
+      <div id="home-watering-list" style="margin-top: 15px;"></div>
+    </section>
+
+    <!-- ABA O MEU JARDIM -->
+    <section id="jardim" class="tab-content">
+      <h2>O Meu Jardim</h2>
+      <div id="jardim-list" style="margin-top: 15px;"></div>
+    </section>
+
+    <!-- ABA CATÁLOGO -->
+    <section id="catalogo" class="tab-content">
+      <h2>Catálogo & Adicionar Planta</h2>
+      <form id="form-add-plant" class="card" style="margin-top: 15px;">
+        <label>Nome da Planta:</label>
+        <input type="text" id="plant-name" required style="width:100%; margin: 5px 0 10px; padding: 8px;">
+
+        <label>Espécie:</label>
+        <input type="text" id="plant-species" required style="width:100%; margin: 5px 0 10px; padding: 8px;">
+
+        <label>Divisão:</label>
+        <select id="plant-location" style="width:100%; margin: 5px 0 15px; padding: 8px;">
+          <option value="Sala">Sala</option>
+          <option value="Cozinha">Cozinha</option>
+          <option value="Varanda">Varanda</option>
+        </select>
+
+        <button type="submit" class="btn">Adicionar ao Meu Jardim</button>
+      </form>
+    </section>
+
+    <!-- ABA PERFIL -->
+    <section id="perfil" class="tab-content">
+      <h2>Perfil do Utilizador</h2>
+      <div class="card" style="margin-top: 15px;">
+        <p><strong>Utilizador:</strong> José Clemente</p>
+        <p><strong>Plano Atual:</strong> Gratuito (Máx. 5 plantas)</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navegação Inferior -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="inicio">🏠<br>Início</button>
+    <button class="nav-item" data-tab="jardim">🌱<br>Meu Jardim</button>
+    <button class="nav-item" data-tab="catalogo">📖<br>Catálogo</button>
+    <button class="nav-item" data-tab="perfil">👤<br>Perfil</button>
+  </nav>
+
+  <script type="module" src="js/app.js"></script>
+  <script src="js/register-sw.js"></script>
+</body>
+</html>
